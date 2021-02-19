@@ -16,9 +16,16 @@ export default class Play extends Scene {
     this.addChild(footer);
 
     const pinata = new Pinata()
-    const cactus = new Cactus();
-    cactus.y = 350
-    this.addChild(cactus)
+    const cactus1 = new Cactus('cactus-1');
+    cactus1.y = 350
+    cactus1.x = -500
+
+    const cactus2 = new Cactus('cactus-2');
+    cactus2.y = 350
+    cactus2.x = 500
+
+    this.addChild(cactus1)
+    this.addChild(cactus2)
     this.addChild(pinata)
 
     this.background.alpha = 0;
@@ -36,7 +43,8 @@ export default class Play extends Scene {
     this._music.once(Music.events.START, () => {
       this._music.once(Music.events.BEAT, () => {
         pinata.dance();
-        cactus.dance();
+        cactus1.dance();
+        cactus2.dance();
       })
       this._music.on(Music.events.BEAT,() => {
         pinata._createElements();
