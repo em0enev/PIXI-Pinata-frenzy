@@ -9,7 +9,7 @@ export default class Music extends utils.EventEmitter {
     Assets.sounds.mariachi.loop(true);
 
     setInterval(() => this.emit(Music.events.BEAT), 312);
-    setInterval(() => this.emit(Music.events.INTRO), 1350);
+    setInterval(() => this.emit(Music.events.INTRO), 2000);
     setInterval(() => this.emit(Music.events.START), 2300);
   }
 
